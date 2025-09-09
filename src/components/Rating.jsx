@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Star from "./Star";
 import Modal from "./Modal";
+import Button from "./Button";
 
 export default function Rating({ heading, color = 'gold' }) {
     const [rating, setRating] = useState(0);
@@ -47,13 +48,13 @@ export default function Rating({ heading, color = 'gold' }) {
                 </p>
             }
 
-            <button
-                className="submit-btn"
+            <Button
+                className='submit-btn'
                 onClick={handleSubmit}
                 disabled={rating === 0}
             >
                 Submit
-            </button>
+            </Button>
 
             <Modal
                 isOpen={submitted}
