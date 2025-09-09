@@ -1,7 +1,11 @@
+import Rating from "./components/Rating"
+
 function App() {
-  return (
-    <h1>Rating Component</h1>
-  )
+    return (
+        <>
+            <Rating heading='Rate Your Experience' />
+        </>
+    )
 }
 
 export default App
