@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Star from "./Star";
+import Modal from "./Modal";
 
 export default function Rating({ heading, color = 'gold' }) {
     const [rating, setRating] = useState(0);
@@ -54,24 +55,11 @@ export default function Rating({ heading, color = 'gold' }) {
                 Submit
             </button>
 
-            {/* Modal */}
-            {
-                submitted && (
-                    <div className="modal-overlay">
-                        <div className="modal">
-                            <h2>Thank you!</h2>
-                            <p>You rated us {rating} star{rating > 1 ? 's' : ''}</p>
-                            <button
-                                className="close-btn"
-                                onClick={closeModal}
-                            >
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                )
-            }
-
+            <Modal
+                isOpen={submitted}
+                onClose={closeModal}
+                rating={rating}
+            />
         </div>
     );
 }
